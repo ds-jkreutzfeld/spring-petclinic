@@ -147,11 +147,7 @@ class OwnerController {
 			owner.setId(ownerId);
 			long start = System.currentTimeMillis();
 			this.owners.save(owner);
-			long end;
-			do {
-				end = System.currentTimeMillis();
-			}
-			while (end - start < 200);
+			long end = System.currentTimeMillis();
 			log.finest("Start " + start + " end " + end + " duration " + (end - start));
 			return "redirect:/owners/{ownerId}";
 		}
