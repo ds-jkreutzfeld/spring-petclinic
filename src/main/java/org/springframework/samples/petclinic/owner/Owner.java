@@ -46,12 +46,6 @@ import org.springframework.util.Assert;
 @Table(name = "owners")
 public class Owner extends Person {
 
-	public Owner() {
-		createdAt = new Exception().getStackTrace();
-	}
-
-	private transient final StackTraceElement[] createdAt;
-
 	@Column(name = "address")
 	@NotEmpty
 	private String address;
